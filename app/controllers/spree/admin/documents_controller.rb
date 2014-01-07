@@ -10,6 +10,12 @@ module Spree
           format.pdf { render params[:template] }
         end
       end
+
+      private
+
+      def model_class
+        Spree::Shipment
+      end
     end
   end
 end
