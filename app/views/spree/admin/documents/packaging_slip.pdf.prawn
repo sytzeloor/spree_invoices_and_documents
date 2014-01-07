@@ -133,7 +133,7 @@ grid([5.05, 0], [9.6, 5]).bounding_box do
     rows << [
       make_cell(item.variant.sku),
       make_cell([item.variant.product.name, item.variant.option_values.empty? ? nil : "(#{item.variant.options_text})"].compact.join(' ')),
-      make_cell("#{item.states.select { |state, count| %w(pending shipped ready).include?(state) }.map { |state, count| count }.sum} x"),
+      make_cell("#{item.states.select { |state, count| %w(on_hand shipped ready).include?(state) }.map { |state, count| count }.sum} x"),
     ]
   end
 
