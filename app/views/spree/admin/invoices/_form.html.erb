@@ -1,0 +1,28 @@
+<div>
+  <div class="alpha twelve columns">
+    <fieldset class="no-border-bottom">
+      <legend align="center"><%= Spree.t(:invoice, scope: :invoices_and_documents) %></legend>
+      <div class="alpha six columns">
+        <div class="field">
+          <%= f.label :invoice_number, Spree.t(:invoice_number, scope: :invoices_and_documents) %>
+          <%= f.text_field :invoice_number, class: 'fullwidth', disabled: true %>
+        </div>
+        <div class="field">
+          <%= f.label :order_reference, Spree.t(:order_reference, scope: :invoices_and_documents) %>
+          <%= f.text_field :order_reference, class: 'fullwidth' %>
+        </div>
+      </div>
+      <div class="omega six columns">
+        <div class="field">
+          <%= f.label :invoice_date, Spree.t(:invoice_date, scope: :invoices_and_documents) %>
+          <%= f.text_field :invoice_date, class: 'fullwidth datepicker', value: datepicker_field_value(@invoice.invoice_date) %>
+        </div>
+        <div class="field">
+          <%= f.label :tax_rate, Spree.t(:tax_rate, scope: :invoices_and_documents) %>
+          <%= f.text_field :tax_rate, class: 'fullwidth' %>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="clear"></div>
+</div>

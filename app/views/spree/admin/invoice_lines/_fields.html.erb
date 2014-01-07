@@ -1,0 +1,42 @@
+<div class="nested-fields">
+  <div class="alpha two columns">
+    <div class="field">
+      <%= f.label :sku, Spree.t(:sku, scope: :invoices_and_documents) %>
+      <%= f.text_field :sku, class: 'fullwidth' %>
+    </div>
+  </div>
+  <div class="three columns">
+    <div class="field">
+      <%= f.label :description, Spree.t(:description, scope: :invoices_and_documents) %>
+      <%= f.text_field :description, class: 'fullwidth' %>
+    </div>
+  </div>
+  <div class="two columns">
+    <div class="field">
+      <%= f.label :unit_price, Spree.t(:unit_price, scope: :invoices_and_documents) %>
+      <%= f.text_field :unit_price, class: 'fullwidth' %>
+    </div>
+  </div>
+  <div class="one columns">
+    <div class="field">
+      <%= f.label :units, Spree.t(:units, scope: :invoices_and_documents) %>
+      <%= f.text_field :units, class: 'fullwidth' %>
+    </div>
+  </div>
+  <div class="two columns">
+    <div class="field">
+      <%= f.check_box :taxable %>
+      <%= f.label :taxable, Spree.t(:taxable, scope: :invoices_and_documents) %>
+    </div>
+    <div class="field">
+      <%= f.check_box :tax_included %>
+      <%= f.label :tax_included, Spree.t(:tax_included, scope: :invoices_and_documents) %>
+    </div>
+  </div>
+  <div class="omega two columns">
+    <div class="field">
+      <%= link_to_remove_association Spree.t(:remove, scope: :invoices_and_documents), f, class: 'button icon-trash' %>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>

@@ -1,0 +1,59 @@
+<div>
+  <div class="alpha twelve columns">
+    <fieldset class="no-border-bottom">
+      <legend align="center"><%= Spree.t(:identity, scope: :invoices_and_documents) %></legend>
+      <div class="alpha six columns">
+        <div class="field">
+          <%= f.label :first_name, Spree.t(:first_name, scope: :invoices_and_documents) %>
+          <%= f.text_field :first_name, class: 'fullwidth' %>
+        </div>
+        <div class="field">
+          <%= f.label :last_name, Spree.t(:last_name, scope: :invoices_and_documents) %>
+          <%= f.text_field :last_name, class: 'fullwidth' %>
+        </div>
+      </div>
+      <div class="omega six columns">
+        <div class="field">
+          <%= f.label :company, Spree.t(:company, scope: :invoices_and_documents) %>
+          <%= f.text_field :company, class: 'fullwidth' %>
+        </div>
+        <div class="field">
+          <%= f.label :tax_id, Spree.t(:tax_id, scope: :invoices_and_documents) %>
+          <%= f.text_field :tax_id, class: 'fullwidth' %>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset class="no-border-bottom">
+      <legend align="center"><%= Spree.t(:address, scope: :invoices_and_documents) %></legend>
+      <div class="alpha six columns">
+        <div class="field">
+          <%= f.label :address_1, Spree.t(:address_1, scope: :invoices_and_documents) %>
+          <%= f.text_field :address_1, class: 'fullwidth' %>
+        </div>
+        <div class="field">
+          <%= f.label :address_2, Spree.t(:address_2, scope: :invoices_and_documents) %>
+          <%= f.text_field :address_2, class: 'fullwidth' %>
+        </div>
+        <div class="field">
+          <%= f.label :zipcode, Spree.t(:zipcode, scope: :invoices_and_documents) %>
+          <%= f.text_field :zipcode, class: 'fullwidth' %>
+        </div>
+      </div>
+      <div class="omega six columns">
+        <div class="field">
+          <%= f.label :city, Spree.t(:city, scope: :invoices_and_documents) %>
+          <%= f.text_field :city, class: 'fullwidth' %>
+        </div>
+        <div class="field">
+          <%= f.label :state_name, Spree.t(:state_name, scope: :invoices_and_documents) %>
+          <%= f.text_field :state_name, class: 'fullwidth' %>
+        </div>
+        <div class="field">
+          <%= f.label :country_name, Spree.t(:country_name, scope: :invoices_and_documents) %>
+          <%= f.text_field :country_name, class: 'fullwidth' %>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="clear"></div>
+</div>

@@ -1,0 +1,15 @@
+module Spree
+  module Admin
+    class DocumentsController < Spree::Admin::BaseController
+      prawnto prawn: { page_size: 'A4', margin: 20 }
+
+      def show
+        @shipment = Spree::Shipment.find(params[:shipment_id])
+
+        respond_to do |format|
+          format.pdf { render params[:template] }
+        end
+      end
+    end
+  end
+end

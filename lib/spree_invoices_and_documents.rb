@@ -1,0 +1,6 @@
+require 'spree_core'
+require 'cocoon'
+require 'prawnto'
+require 'prawn-svg'
+require 'has_barcode'
+require 'spree_invoices_and_documents/engine'

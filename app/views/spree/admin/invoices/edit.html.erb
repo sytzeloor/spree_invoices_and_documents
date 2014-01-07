@@ -1,0 +1,45 @@
+<% @order = @invoice.order %>
+
+<%= render partial: 'spree/admin/shared/order_tabs', locals: { current: 'Invoices' } %>
+
+<% content_for :page_title do %>
+  <i class="icon-arrow-right"></i> <%= Spree.t(:edit_invoice, scope: :invoices_and_documents) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <li>
+    <%= button_link_to Spree.t(:back), collection_url, icon: 'icon-arrow-left' %>
+  </li>
+<% end %>
+
+<%= render partial: 'spree/shared/error_messages', locals: { target: @invoice } %>
+
+<%= form_for [:admin, @invoice] do |f| %>
+  <fieldset class="no-border-top">
+    <%= render partial: 'form', locals: { f: f } %>
+
+    <%= f.fields_for :invoice_address do |invoice_address_fields| %>
+      <%= render partial: 'spree/admin/invoice_addresses/form', locals: { f: invoice_address_fields } %>
+    <% end %>
+
+    <div>
+      <div class="alpha twelve columns">
+        <fieldset class="no-border-bottom">
+          <legend align="center"><%= Spree.t(:invoice_lines, scope: :invoices_and_documents) %></legend>
+          <div class="nested-form-wrapper">
+            <%= f.fields_for :invoice_lines do |invoice_line_fields| %>
+              <%= render partial: 'spree/admin/invoice_lines/fields', locals: { f: invoice_line_fields } %>
+            <% end %>
+          </div>
+          <%= link_to_add_association Spree.t(:add_invoice_line, scope: :invoices_and_documents), f, :invoice_lines, data: { :'association-insertion-node' => 'div.nested-form-wrapper', :'association-insertion-method' => 'append' }, partial: 'spree/admin/invoice_lines/fields', class: 'button icon-plus' %>
+        </fieldset>
+        <div class="clear"></div>
+      </div>
+    </div>
+
+    <div class="clear"></div>
+
+    <%= render partial: 'spree/admin/shared/edit_resource_links' %>
+
+  </fieldset>
+<% end %>

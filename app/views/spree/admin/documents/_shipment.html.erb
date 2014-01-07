@@ -1,0 +1,17 @@
+<div class="alpha omega twelve columns">
+  <ul class="inline">
+    <li><strong><%= Spree.t(:label, scope: [:invoices_and_documents, :packaging_slip]) %></strong></li>
+    <% (1..6).each do |i| %>
+      <li><%= link_to i.to_s, spree.admin_shipment_documents_path(shipment.id, template: 'packaging_slip', packages: i, format: :pdf), class: 'button', target: '_blank' %></li>
+    <% end %>
+    <li><%= link_to Spree.t(:other, scope: [:invoices_and_documents, :packaging_slip]), spree.admin_shipment_documents_path(shipment.id, template: 'packaging_slip', format: :pdf), class: 'button', target: '_blank' %></li>
+  </ul>
+  <br />
+  <ul class="inline">
+    <li><strong><%= Spree.t(:label, scope: [:invoices_and_documents, :non_wood]) %></strong></li>
+    <% (1..6).each do |i| %>
+      <li><%= link_to i.to_s, spree.admin_shipment_documents_path(shipment.id, template: 'non_wood', packages: i, format: :pdf), class: 'button', target: '_blank' %></li>
+    <% end %>
+    <li><%= link_to Spree.t(:other, scope: [:invoices_and_documents, :non_wood]), spree.admin_shipment_documents_path(shipment.id, template: 'non_wood', format: :pdf), class: 'button', target: '_blank' %></li>
+  </ul>
+</div>

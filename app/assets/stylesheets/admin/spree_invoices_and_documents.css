@@ -1,0 +1,12 @@
+/*
+ *= require admin/spree_backend
+*/
+
+ul.inline {
+  clear: both;
+  list-style: none;
+}
+ul.inline li {
+  margin-right: 16px;
+  float: left;
+}

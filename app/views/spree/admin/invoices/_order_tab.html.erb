@@ -1,0 +1,5 @@
+<% if can?(:read, Spree::Invoice) %>
+  <li<%== ' class="active"' if current == 'Invoices' %>>
+    <%= link_to_with_icon('icon-money', Spree.t(:invoices, scope: :invoices_and_documents), spree.admin_order_invoices_path(@order)) %>
+  </li>
+<% end %>

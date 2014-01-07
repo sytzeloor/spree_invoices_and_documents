@@ -1,0 +1,83 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  spree:
+    invoices_and_documents:
+      identity: Identity
+      first_name: First name
+      last_name: Last name
+      company: Company
+      tax_id: VAT
+      address: Address
+      address_1: Address
+      address_2: Address cont.
+      zipcode: ZIP code
+      city: City
+      state_name: State
+      country_name: Country
+      sku: SKU
+      description: Description
+      unit_price: Unit price
+      units: Units
+      taxable: Taxable
+      tax_included: Tax included
+      remove: Remove
+      invoice: Invoice
+      invoice_number: Number
+      order_reference: Order reference
+      invoice_date: Date
+      tax_rate: Tax rate
+      invoices: Invoices
+      edit_invoice: Edit invoice
+      invoice_lines: Lines
+      add_invoice_line: Add line
+      new_invoice: New invoice
+      back_to_order_details: Back to order details
+      no_results: No results
+      invoice_total: Total
+      invoice_recipient: Recipient
+      download_pdf: Download PDF
+      packaging_slip:
+        label: 'Pack. slip (pck)'
+        other: other
+      non_wood:
+        label: 'Non wood (pck)'
+        other: other
+      pdf:
+        pagination: Page <page> of <total>
+        invoice: Invoice
+        order_reference: Order reference
+        date: Date
+        account: Account
+        sku: SKU
+        description: Description
+        unit_price: Unit price
+        units: Units
+        line_total: Total
+        sub_total: Sub total
+        tax: Tax (VAT)
+        invoice_total: Invoice total
+        footer_support: 'For questions regarding your order or RMA requests, contact Support at support@ultimaker.com.'
+        customer_comments: 'Comments by customer:'
+        senders_address: "Ultimaker B.V.\nBurgemeester R. vd Venlaan 11\n4191PL Geldermalsen\nThe Netherlands\nwww.ultimaker.com\n\nDutch Chamber of Commerce: 56793138\nEORI: NL8523.04.158\nVAT: NL8523.04.158.B01"
+        senders_details: "Incoterm: DAP\nCustoms declaration: For no commercial value\nExport reason: Permanent\n\nThe sold parts are HS-code 847780, 847790,\nplastics are HS-code 392099"
+        packaging_slip: Packaging slip
+        completed_at: Completed
+        shipped_at: Shipped
+        shipping_address: Shipping address
+        billing_address: Billing address
+        shipping_method: Shipping method
+        weight: Weight
+        weight_label: kg
+        number_of_packages: No. of packages
+        non_wood: Non wood
+        client_reference: Client reference
+        non_wood_header: The Declaration of Non-Wood Packaging Material
+        to: To
+        it_is_declared_that_this_shipment: It is declared that this shipment
+        does_not_contain_wood: Including its container does not contain any wood packing material.
+        shipper_label: Shipper
+        shipper: Ultimaker B.V.
+        date: Date
+        signature: Signature of chop
