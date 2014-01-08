@@ -11,7 +11,7 @@
     <li><%= button_link_to Spree.t(:new_invoice, scope: :invoices_and_documents), new_admin_order_invoice_path(@order), icon: 'icon-plus' %></li>
   <% end %>
   <% if can?(:admin, Spree::Order) %>
-    <li><%= button_link_to Spree.t(:back_to_order_details, scope: :invoices_and_documents), admin_orders_path, icon: 'icon-arrow-left' %></li>
+    <li><%= button_link_to Spree.t(:back_to_order_details, scope: :invoices_and_documents), edit_admin_order_path(@order), icon: 'icon-arrow-left' %></li>
   <% end %>
 <% end %>
 

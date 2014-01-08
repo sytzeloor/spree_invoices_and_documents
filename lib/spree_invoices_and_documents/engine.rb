@@ -5,6 +5,7 @@ module SpreeInvoicesAndDocuments
     engine_name 'spree_invoices_and_documents'
 
     config.autoload_paths += %W(#{config.root}/lib)
+    config.active_record.observers = :'spree/shipment_observer'
 
     # use rspec for tests
     config.generators do |g|

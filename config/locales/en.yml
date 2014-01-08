@@ -81,3 +81,11 @@ en:
         shipper: Ultimaker B.V.
         date: Date
         signature: Signature of chop
+      mail:
+        invoice:
+          debit:
+            subject: 'Ultimaker Invoice - Order %{order}'
+          credit:
+            subject: 'Ultimaker Credit Invoice - Order %{order}'
+        shipment:
+          subject: 'Ultimaker Shipping Information - Order %{order}'

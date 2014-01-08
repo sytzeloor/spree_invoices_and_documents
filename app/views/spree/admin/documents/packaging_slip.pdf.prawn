@@ -103,7 +103,6 @@ repeat :all do
     billing_address_label << billing_address.address2 unless billing_address.address2.blank?
     billing_address_label << [billing_address.city, billing_address.state_text, billing_address.zipcode.gsub(/ /, '')].compact.join(' ')
     billing_address_label << billing_address.country.name
-    billing_address_label << billing_address.phone
 
     rows << [
       make_cell(shipping_address_label.join("\n")),

@@ -5,6 +5,8 @@ module Spree
     has_many :invoice_lines, dependent: :destroy
 
     default_scope -> { order(:invoice_number) }
+    scope :debit, -> { where(is_credit: false) }
+    scope :credit, -> { where(is_credit: true) }
 
     validate :order_id, :invoice_address_id, presence: true
     validate :invoice_number, :invoice_date, presence: true
@@ -20,7 +22,7 @@ module Spree
     set_callback :initialize, :after, :set_invoice_address
     set_callback :initialize, :after, :set_tax_rate
     set_callback :validation, :before, :set_invoice_number
-    set_callback :save, :after, :set_credit_debit, :set_invoice_total, :set_tax_total, :set_item_total
+    set_callback :save, :after, :send_invoice_to_customer, :set_credit_debit, :set_invoice_total, :set_tax_total, :set_item_total
     set_callback :destroy, :after, :delete_invoice_address
 
     def self.next_invoice_number
@@ -112,6 +114,13 @@ module Spree
 
     def set_credit_debit
       self.update_column(:is_credit, invoice_total < 0)
+    end
+
+    def send_invoice_to_customer
+      return unless order.present?
+
+      message = Spree::InvoiceMailer.notify(self)
+      message.deliver unless message.nil?
     end
   end
 end
