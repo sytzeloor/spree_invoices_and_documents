@@ -1,0 +1,56 @@
+<%= render partial: 'spree/admin/shared/order_tabs', locals: { current: 'Documents' } %>
+
+<%= csrf_meta_tags %>
+
+<% content_for :page_title do %>
+  <i class="icon-arrow-right"></i> <%= Spree.t(:documents, scope: :invoices_and_documents) %>
+<% end %>
+
+<% content_for :page_actions do %>
+  <% if can?(:create, Spree::Document) %>
+    <li><%= button_link_to Spree.t(:new_document, scope: :invoices_and_documents), new_admin_order_document_path(@order), icon: 'icon-plus' %></li>
+  <% end %>
+  <% if can?(:admin, Spree::Order) %>
+    <li><%= button_link_to Spree.t(:back_to_order_details, scope: :invoices_and_documents), edit_admin_order_path(@order), icon: 'icon-arrow-left' %></li>
+  <% end %>
+<% end %>
+
+<% unless @documents.any? %>
+  <div class="no-objects-found">
+    <%= Spree.t(:no_results, scope: :invoices_and_documents) %>
+  </div>
+<% else %>
+  <table class="index">
+    <colgroup>
+      <col style="width: 20%">
+      <col style="width: 35%">
+      <col style="width: 20%">
+      <col style="width: 10%">
+      <col style="width: 15%">
+    </colgroup>
+    <thead>
+      <tr>
+        <th><%= Spree.t(:document_name, scope: :invoices_and_documents) %></th>
+        <th><%= Spree.t(:document_description, scope: :invoices_and_documents) %></th>
+        <th><%= Spree.t(:document_file, scope: :invoices_and_documents) %></th>
+        <th><%= Spree.t(:document_file_size, scope: :invoices_and_documents) %></th>
+        <th class="actions"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @documents.each do |document|%>
+        <tr id="<%= spree_dom_id document %>" class="<%= cycle('odd', 'even')%>">
+          <td><%= document.name %></td>
+          <td><%= simple_format(document.description) %></td>
+          <td><%= link_to document.document_file_name, document.document.url, target: '_blank' %></td>
+          <td><%= number_to_human_size(document.document_file_size) %></td>
+          <td class="actions">
+            <%= link_to_with_icon 'icon-pencil', Spree.t(:edit), spree.edit_admin_document_path(document), no_text: true %>
+            <%= link_to_with_icon 'icon-trash', Spree.t(:edit), spree.admin_document_path(document), no_text: true, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
+

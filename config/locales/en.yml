@@ -38,6 +38,14 @@ en:
       invoice_total: Total
       invoice_recipient: Recipient
       download_pdf: Download PDF
+      documents: Documents
+      document: Document
+      new_document: New document
+      edit_document: Edit document
+      document_name: Name
+      document_description: Description
+      document_file: File
+      document_file_size: Size
       packaging_slip:
         label: 'Pack. slip (pck)'
         other: other

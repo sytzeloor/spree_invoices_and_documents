@@ -1,20 +1,28 @@
 module Spree
   module Admin
-    class DocumentsController < Spree::Admin::BaseController
-      prawnto prawn: { page_size: 'A4', margin: 20 }
-
-      def show
-        @shipment = Spree::Shipment.find(params[:shipment_id])
-
-        respond_to do |format|
-          format.pdf { render params[:template] }
-        end
-      end
+    class DocumentsController < Spree::Admin::ResourceController
+      belongs_to 'spree/order', find_by: :number
 
       private
 
-      def model_class
-        Spree::Shipment
+      def location_after_save
+        polymorphic_path([:admin, @document.source, :documents])
+      end
+
+      def collection_url
+        if @document.source.present?
+          polymorphic_path([:admin, @document.source, :documents])
+        else
+          super
+        end
+      end
+
+      def find_resource
+        if parent && parent.respond_to?(controller_name)
+          parent.send(controller_name).find(params[:id])
+        else
+          model_class.find(params[:id])
+        end
       end
     end
   end

@@ -25,6 +25,9 @@ module Spree
       shipments.sum { |shipment| shipment.cost.to_f }
     end
 
+    # Documents
+    has_many :documents, as: :source, dependent: :destroy
+
     # Invoices
     has_many :invoices, dependent: :nullify
 

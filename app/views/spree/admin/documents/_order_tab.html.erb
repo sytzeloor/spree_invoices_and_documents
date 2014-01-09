@@ -1,0 +1,5 @@
+<% if can?(:read, Spree::Document) %>
+  <li<%== ' class="active"' if current == 'Documents' %>>
+    <%= link_to_with_icon('icon-file', Spree.t(:documents, scope: :invoices_and_documents), spree.admin_order_documents_path(@order)) %>
+  </li>
+<% end %>

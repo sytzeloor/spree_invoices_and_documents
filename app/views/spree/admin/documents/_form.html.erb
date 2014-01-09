@@ -1,0 +1,24 @@
+<div>
+  <div class="alpha twelve columns">
+    <fieldset class="no-border-bottom">
+      <legend align="center"><%= Spree.t(:document, scope: :invoices_and_documents) %></legend>
+      <div class="alpha six columns">
+        <div class="field">
+          <%= f.label :name, Spree.t(:document_name, scope: :invoices_and_documents) %>
+          <%= f.text_field :name, class: 'fullwidth' %>
+        </div>
+        <div class="field">
+          <%= f.label :description, Spree.t(:document_description, scope: :invoices_and_documents) %>
+          <%= f.text_area :description, class: 'fullwidth', rows: 8 %>
+        </div>
+      </div>
+      <div class="omega six columns">
+        <div class="field">
+          <%= f.label :document, Spree.t(:document_file, scope: :invoices_and_documents) %>
+          <%= f.file_field :document, class: 'fullwidth' %>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="clear"></div>
+</div>
