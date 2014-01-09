@@ -65,7 +65,7 @@ repeat :all do
     make_cell(Spree.t(:shipping_address, scope: [:invoices_and_documents, :pdf]), font_style: :bold)
   ]
 
-  grid([2.85, 0], [4, 5]).bounding_box do
+  grid([2.85, 0], [5, 5]).bounding_box do
     shipping_address = @invoice.order.ship_address
     invoice_address = @invoice.invoice_address
 

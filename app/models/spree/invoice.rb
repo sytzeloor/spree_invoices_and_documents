@@ -73,7 +73,7 @@ module Spree
 
     def set_tax_rate
       return if tax_rate.present?
-      self.tax_rate = order.tax_zone.tax_rates.first.amount
+      self.tax_rate = order.tax_zone.tax_rates.first.try(:amount) || 0
     end
 
     def set_order_reference
@@ -117,7 +117,7 @@ module Spree
     end
 
     def send_invoice_to_customer
-      return unless order.present?
+      return unless order.present? && order.user.present? && order.ship_address.present?
 
       message = Spree::InvoiceMailer.notify(self)
       message.deliver unless message.nil?
