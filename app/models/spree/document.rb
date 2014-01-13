@@ -4,6 +4,9 @@ module Spree
       url: Spree::Config.attachment_default_url.gsub('/products/', '/documents/'),
       path: Spree::Config.attachment_path.gsub('/products/', '/documents/')
 
+    include Spree::Core::S3Support
+    supports_s3 :document
+
     belongs_to :source, polymorphic: true
 
     validate :name, presence: true
