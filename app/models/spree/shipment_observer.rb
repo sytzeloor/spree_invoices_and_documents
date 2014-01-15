@@ -3,7 +3,7 @@ module Spree
     def after_transition(shipment, transition)
       return unless transition.to == 'pending' && !shipment.tracking.present?
 
-      message = Spree::ShipmentMailer.notify(shipment)
+      message = Spree::ShipmentDocumentsMailer.notify(shipment)
       message.deliver unless message.nil?
     end
   end
