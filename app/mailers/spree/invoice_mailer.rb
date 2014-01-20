@@ -1,5 +1,5 @@
 module Spree
-  class InvoiceMailer < ActionMailer::Base
+  class InvoiceMailer < BaseMailer
     default from: 'Ultimaker Support <support@ultimaker.com>'
 
     def notify(invoice)

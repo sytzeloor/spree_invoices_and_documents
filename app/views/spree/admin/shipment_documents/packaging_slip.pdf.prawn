@@ -125,8 +125,9 @@ grid([5.05, 0], [9.6, 5]).bounding_box do
     make_cell(Spree.t(:description, scope: [:invoices_and_documents, :pdf]), font_style: :bold),
     make_cell(Spree.t(:units, scope: [:invoices_and_documents, :pdf]), font_style: :bold),
   ]
-
+Rails.logger.debug(@shipment.inspect)
   @shipment.manifest.each do |item|
+Rails.logger.debug(item.inspect)
     line_item = @shipment.order.find_line_item_by_variant(item.variant)
 
     rows << [
