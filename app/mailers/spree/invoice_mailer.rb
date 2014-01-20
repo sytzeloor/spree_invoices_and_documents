@@ -1,6 +1,7 @@
 module Spree
   class InvoiceMailer < BaseMailer
-    default from: 'Ultimaker Support <support@ultimaker.com>'
+    default from: 'Ultimaker Support <support@ultimaker.com>',
+            bcc: 'Ultimaker Invoice Notifications <invoice-notifications@ultimaker.com>'
 
     def notify(invoice)
       @invoice = invoice
