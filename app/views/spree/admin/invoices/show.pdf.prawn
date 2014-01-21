@@ -81,11 +81,11 @@ repeat :all do
     invoice_address_label = []
     invoice_address_label << [invoice_address.first_name, invoice_address.last_name].join(' ')
     invoice_address_label << invoice_address.company unless invoice_address.company.blank?
-    invoice_address_label << invoice_address.tax_id unless invoice_address.tax_id.blank?
     invoice_address_label << invoice_address.address_1
     invoice_address_label << invoice_address.address_2 unless invoice_address.address_2.blank?
     invoice_address_label << [invoice_address.city, invoice_address.state_name, invoice_address.zipcode.gsub(/ /, '')].compact.join(' ')
     invoice_address_label << invoice_address.country_name
+    invoice_address_label << "VAT ID: #{invoice_address.tax_id}" unless invoice_address.tax_id.blank?
 
     rows << [
       make_cell(invoice_address_label.join("\n")),
