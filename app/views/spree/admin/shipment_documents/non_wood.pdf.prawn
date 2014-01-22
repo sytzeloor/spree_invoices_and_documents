@@ -62,14 +62,14 @@ repeat :all do
 
   if @shipment.tracking && @shipment.respond_to?(:barcode)
     grid([1.15, 0], [3.15, 2]).bounding_box do
-      svg @shipment.barcode.to_svg, at: [0, 155], width: 200, height: 30
+      svg @shipment.barcode.to_svg, at: [0, 153], width: 200, height: 25
       text_box @shipment.tracking, at: [0, 80], width: 200, size: 8, align: :center
     end
   end
 
   if @shipment.order.respond_to?(:barcode)
     grid([1.15, 3], [3.15, 5]).bounding_box do
-      svg @shipment.order.barcode.to_svg, at: [85, 155], width: 200, height: 30
+      svg @shipment.order.barcode.to_svg, at: [85, 153], width: 200, height: 25
       text_box "#{@shipment.order.number}-#{@shipment.order.checksum}", at: [85, 80], width: 200, size: 8, align: :center
     end
   end

@@ -53,7 +53,7 @@ repeat :all do
 
   if @invoice.order && @invoice.order.respond_to?(:barcode)
     grid([1.15, 3], [3.15, 5]).bounding_box do
-      svg @invoice.order.barcode.to_svg, at: [85, 155], width: 200, height: 30
+      svg @invoice.order.barcode.to_svg, at: [85, 153], width: 200, height: 25
       text_box "#{@invoice.order.number}-#{@invoice.order.checksum}", at: [85, 80], width: 200, size: 8, align: :center
     end
   end
