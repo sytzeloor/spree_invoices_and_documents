@@ -12,7 +12,7 @@ module Spree
       attachments['packaging_slip.pdf'] = render('spree/admin/shipment_documents/packaging_slip', format: :pdf)
       attachments['non_wood.pdf'] = render('spree/admin/shipment_documents/non_wood', format: :pdf) if %(AUS).include?(shipment.order.ship_address.country.try(:iso3))
 
-      recipient = "Printer Logistiek Ultimaker <printer-logistiek@ultimaker.com>"
+      recipient = "Printer Logistiek Ultimaker <35iog9645acvi@hpeprint.com>"
 
       subject = Spree.t(:subject, scope: [:invoices_and_documents, :mail, :shipment], order: shipment.order.number)
 
