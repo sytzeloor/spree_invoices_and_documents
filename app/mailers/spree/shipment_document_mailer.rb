@@ -1,5 +1,5 @@
 module Spree
-  class ShipmentDocumentsMailer < BaseMailer
+  class ShipmentDocumentMailer < BaseMailer
     default from: 'Ultimaker Support <support@ultimaker.com>'
 
     def notify(shipment)
