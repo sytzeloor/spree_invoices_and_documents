@@ -89,6 +89,7 @@ en:
         shipper: Ultimaker B.V.
         date: Date
         signature: Signature of chop
+        harmonized_code: HS-code
       mail:
         invoice:
           debit:

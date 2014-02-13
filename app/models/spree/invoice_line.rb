@@ -21,5 +21,11 @@ module Spree
     def display_line_total
       Spree::Money.new(line_total, { currency: invoice.currency })
     end
+
+    def harmonized_code
+      if reference && reference.respond_to?(:product) && reference.product.respond_to?(:harmonized_code)
+        reference.product.harmonized_code
+      end
+    end
   end
 end

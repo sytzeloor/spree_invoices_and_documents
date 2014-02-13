@@ -113,7 +113,10 @@ grid([5.05, 0], [9.6, 5]).bounding_box do
   @invoice.invoice_lines.each do |invoice_line|
     rows << [
       make_cell(invoice_line.sku),
-      make_cell(invoice_line.description),
+      make_cell([
+        invoice_line.description,
+        invoice_line.harmonized_code ? "#{Spree.t(:harmonized_code, scope: [:invoices_and_documents, :pdf])}: #{invoice_line.harmonized_code}" : nil
+      ].compact.join("\n")),
       make_cell("#{invoice_line.units} x"),
       make_cell(invoice_line.display_unit_price.to_s),
       make_cell(invoice_line.display_line_total.to_s)
@@ -131,7 +134,7 @@ repeat :all do
 
   # Support
   grid([10.5, 0], [12, 3.5]).bounding_box do
-    if @invoice.customer_comments
+    if @invoice.customer_comments.present?
       text Spree.t(:customer_comments, scope: [:invoices_and_documents, :pdf]), style: :bold
       move_down 2
       text @invoice.customer_comments
