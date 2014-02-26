@@ -134,12 +134,12 @@ repeat :all do
 
   # Support
   grid([10.5, 0], [12, 3.5]).bounding_box do
-    if @invoice.customer_comments.present?
-      text Spree.t(:customer_comments, scope: [:invoices_and_documents, :pdf]), style: :bold
-      move_down 2
-      text @invoice.customer_comments
-      move_down 8
-    end
+    # if @invoice.customer_comments.present?
+    #   text Spree.t(:customer_comments, scope: [:invoices_and_documents, :pdf]), style: :bold
+    #   move_down 2
+    #   text @invoice.customer_comments
+    #   move_down 8
+    # end
 
     text Spree.t(:footer_support, scope: [:invoices_and_documents, :pdf])
   end

@@ -148,12 +148,12 @@ repeat :all do
 
   # Special instructions
   grid([10.5, 0], [12, 3.5]).bounding_box do
-    if @shipment.order.special_instructions
-      text Spree.t(:customer_comments, scope: [:invoices_and_documents, :pdf]), style: :bold
-      move_down 2
-      text @shipment.order.special_instructions
-      move_down 8
-    end
+    # if @shipment.order.special_instructions
+    #   text Spree.t(:customer_comments, scope: [:invoices_and_documents, :pdf]), style: :bold
+    #   move_down 2
+    #   text @shipment.order.special_instructions
+    #   move_down 8
+    # end
   end
 
   # Packages and weight

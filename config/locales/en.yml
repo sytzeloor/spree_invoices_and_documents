@@ -52,6 +52,9 @@ en:
       non_wood:
         label: 'Non wood (pck)'
         other: other
+      fcc:
+        label: 'FCC'
+        other: other
       pdf:
         pagination: Page <page> of <total>
         invoice: Invoice
@@ -90,6 +93,8 @@ en:
         date: Date
         signature: Signature of chop
         harmonized_code: HS-code
+        fcc: FCC declaration
+        fcc_header: Statement regarding the importation of radio frequency devices capable of causing harmful interference
       mail:
         invoice:
           debit:
