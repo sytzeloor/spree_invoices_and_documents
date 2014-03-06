@@ -77,8 +77,8 @@ repeat :all do
   rows = []
 
   rows << [
-    make_cell(Spree.t(:shipping_address, scope: [:invoices_and_documents, :pdf]), font_style: :bold),
     make_cell(Spree.t(:billing_address, scope: [:invoices_and_documents, :pdf]), font_style: :bold),
+    make_cell(Spree.t(:shipping_address, scope: [:invoices_and_documents, :pdf]), font_style: :bold),
     make_cell(Spree.t(:shipping_method, scope: [:invoices_and_documents, :pdf]), font_style: :bold)
   ]
 
@@ -105,8 +105,8 @@ repeat :all do
     billing_address_label << billing_address.country.name
 
     rows << [
-      make_cell(shipping_address_label.join("\n")),
       make_cell(billing_address_label.join("\n")),
+      make_cell(shipping_address_label.join("\n")),
       make_cell(@shipment.shipping_method.name, size: 20, align: :center, font_style: :bold, valign: :center)
     ]
 
