@@ -54,7 +54,7 @@ repeat :all do
       ]
     end
 
-    table(rows, position: :right, column_widths: [100, 190], cell_style: { padding: [2, 8], borders: [] }) do
+    table(rows, position: :right, column_widths: [100, 190], cell_style: { padding: [1, 8], borders: [] }) do
       column(0).style align: :right
       column(1).style align: :left
     end
