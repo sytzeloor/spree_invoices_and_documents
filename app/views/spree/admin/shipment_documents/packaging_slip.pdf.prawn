@@ -82,7 +82,7 @@ repeat :all do
     make_cell(Spree.t(:shipping_method, scope: [:invoices_and_documents, :pdf]), font_style: :bold)
   ]
 
-  grid([2.85, 0], [4, 5]).bounding_box do
+  grid([2.85, 0], [5, 5]).bounding_box do
     shipping_address = @shipment.order.ship_address
     billing_address = @shipment.order.bill_address
 
@@ -113,11 +113,11 @@ repeat :all do
     table(rows, column_widths: [200, 200, 160], header: true, width: 560, cell_style: { padding: [4, 4] })
   end
 
-  stroke_line [0, 520], [560, 520]
+  stroke_line [0, 507], [560, 507]
 end
 
 # Inventory items
-grid([5.05, 0], [9.6, 5]).bounding_box do
+grid([5.25, 0], [9.6, 5]).bounding_box do
   rows = []
 
   rows << [
